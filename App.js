@@ -12,7 +12,8 @@ import {
   View
 } from 'react-native';
 
-import Deck from './src/Deck'
+import Deck from './src/Deck';
+import {Card , Button} from 'react-native-elements';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -37,7 +38,23 @@ const DATA = [
 export default class App extends Component<{}> {
   renderCard(item){
     return(
-      <Text>{item.text}</Text>
+      <Card
+        key = {item.id}
+        title = {item.text}
+        image = {{uri : item.uri}}
+      >
+        <Text style = {{ marginBottom:10 }}>
+          I can customise the card further
+        </Text>
+
+        <Button 
+          icon = {{name : 'code'}}
+          backgroundColor = "#03A9F4"
+          title = "View Now!"
+        />
+
+
+      </Card>
     );
   }
 
