@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-import Ball from './src/Ball'
+import Deck from './src/Deck'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -21,20 +21,34 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
+const DATA = [
+  {id: 1, text: 'Card #1', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 2, text: 'Card #2', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 3, text: 'Card #3', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 4, text: 'Card #4', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 5, text: 'Card #5', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 6, text: 'Card #6', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 7, text: 'Card #7', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 8, text: 'Card #8', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 9, text: 'Card #9', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 10, text: 'Card #10', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'}
+];
+
 export default class App extends Component<{}> {
+  renderCard(item){
+    return(
+      <Text>{item.text}</Text>
+    );
+  }
+
+
   render() {
     return (
       <View style={styles.container}>
-        {/* <Text style={styles.welcome}>
-          Welcome to React Native!!!!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started with, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text> */}
-        <Ball/>
+        <Deck 
+          data = {DATA}
+          renderCard = {this.renderCard}
+        />
       </View>
     );
   }
