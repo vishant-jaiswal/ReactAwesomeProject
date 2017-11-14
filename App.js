@@ -48,9 +48,9 @@ export default class App extends Component<{}> {
         </Text>
 
         <Button 
-          icon = {{name : 'code'}}
+          icon = {{name : 'home'}}
           backgroundColor = "#03A9F4"
-          title = "View Now!"
+          title = "Follow"
         />
 
 
