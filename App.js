@@ -23,16 +23,14 @@ const instructions = Platform.select({
 });
 
 const DATA = [
-  // {id: 1, text: 'Card #1', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  // {id: 2, text: 'Card #2', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  // {id: 3, text: 'Card #3', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  // {id: 4, text: 'Card #4', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  // {id: 5, text: 'Card #5', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  // {id: 6, text: 'Card #6', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  // {id: 7, text: 'Card #7', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  // {id: 8, text: 'Card #8', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  {id: 9, text: 'Card #9', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  {id: 10, text: 'Card #10', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'}
+  {id: 0, text: 'Card #1', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 1, text: 'Card #2', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 2, text: 'Card #3', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 3, text: 'Card #4', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 4, text: 'Card #5', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 5, text: 'Card #6', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 6, text: 'Card #7', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  {id: 7, text: 'Card #8', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
 ];
 
 export default class App extends Component<{}> {
@@ -40,8 +38,8 @@ export default class App extends Component<{}> {
     return(
       <Card
         key = {item.id}
-        title = {item.text}
         image = {{uri : item.uri}}
+        title = {item.text}
       >
         <Text style = {{ marginBottom:10 }}>
           I can customise the card further
