@@ -23,14 +23,14 @@ const instructions = Platform.select({
 });
 
 const DATA = [
-  {id: 1, text: 'Card #1', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  {id: 2, text: 'Card #2', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  {id: 3, text: 'Card #3', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  {id: 4, text: 'Card #4', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  {id: 5, text: 'Card #5', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  {id: 6, text: 'Card #6', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  {id: 7, text: 'Card #7', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
-  {id: 8, text: 'Card #8', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  // {id: 1, text: 'Card #1', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  // {id: 2, text: 'Card #2', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  // {id: 3, text: 'Card #3', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  // {id: 4, text: 'Card #4', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  // {id: 5, text: 'Card #5', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  // {id: 6, text: 'Card #6', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  // {id: 7, text: 'Card #7', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
+  // {id: 8, text: 'Card #8', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
   {id: 9, text: 'Card #9', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'},
   {id: 10, text: 'Card #10', uri:'https://newsyard-test.s3.amazonaws.com/news-yard-media-v1/story/story-2/xyz.png'}
 ];
@@ -58,6 +58,20 @@ export default class App extends Component<{}> {
     );
   }
 
+  renderNoMoreCards(){
+    return(
+      <Card title = "All Card Done!">
+        <Text style = {{ marginBottom:10 }}>
+          No More Content Available
+        </Text>
+        <Button
+          backgroundColor = "#03A9F4"
+          title = "Get More!"
+        />
+      </Card>
+    );
+  }
+
 
   render() {
     return (
@@ -65,6 +79,7 @@ export default class App extends Component<{}> {
         <Deck 
           data = {DATA}
           renderCard = {this.renderCard}
+          renderNoMoreCards = {this.renderNoMoreCards}
         />
       </View>
     );
